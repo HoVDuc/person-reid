@@ -125,7 +125,7 @@ if __name__ == '__main__':
     distmat = distmat.numpy()
 
     logger.info("Computing APs for all query images ...")
-    cmc, all_ap, all_inp = evaluate_rank(distmat, q_pids, g_pids, q_camids, g_camids)
+    cmc, all_ap, all_inp = evaluate_rank(distmat=distmat, q_feats=q_feat, g_feats=g_feat, q_pids=q_pids, g_pids=g_pids, q_camids=q_camids, g_camids=g_camids)
     logger.info("Finish computing APs for all query images!")
 
     visualizer = Visualizer(test_loader.dataset)
